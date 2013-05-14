@@ -13,6 +13,7 @@
 			<cfinput type="hidden" name="email_id" value="#Val(email_id)#">
 			<cfinput type="submit" name="submit" value="Edit" class="btn btn-primary">
 			<a href="add_email.cfm?people_id=#Val(url.people_id)#"><button type="button" name="add_email" value="Add" class="btn btn-primary">Add</button></a>
+			<a href="delete_email.cfm?people_id=#Val(url.people_id)#&email_id=#Val(email_id)#"><button type="button" name="delete_email" value="Delete" class="btn btn-danger">Delete</button></a>
 			</td></tr>
 			</cfoutput>
 		</table>

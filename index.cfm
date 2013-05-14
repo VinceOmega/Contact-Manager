@@ -26,6 +26,7 @@
 		<td>#state#</td>
 		<td><a href="person_email.cfm?people_id=#people_id#">#mail_count#</a></td>
 		<td><a href="person_number.cfm?people_id=#people_id#">#number_count#</a></td>
+		<td><a href="delete_person.cfm?people_id=#people_id#"><buttton type="button" name="delete_person" class="btn btn-danger">Delete</button></a></td>
 	</tr>
 	</cfoutput>
 	

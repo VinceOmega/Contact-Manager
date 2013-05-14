@@ -57,6 +57,6 @@ group by people.people_id;
 
 <cfif isDefined('form.flag') is true>
 	<cfif "#form.flag#" eq 1>
-	<cflocation url="search_for.cfm?start=1">
+	<cflocation url="search_for.cfm?start=1&search_bar=#form.search_bar#">
 	</cfif>
 </cfif>
