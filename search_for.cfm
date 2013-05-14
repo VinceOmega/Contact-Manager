@@ -1,8 +1,8 @@
 <cfinclude template="header_include.cfm">
 <cfinclude template="navi_include.cfm">
-<cfif isDefined('url.start') eq true>		
+	
 <cfinclude template="general_search.cfm">
-</cfif>
+
 
 <cfset perPage = "5">
 <cfparam name="url.start" default="1">
@@ -14,6 +14,7 @@
 	<cfform action="general_search.cfm" method="POST">
 		<cfinput type="text" size="500" name="search_bar">
 		<cfinput type="hidden" name="flag" value="1">
+		<cfinput type="submit" name="submit" value="Search" class="btn btn-primary">
 	</cfform>
 	</div>
 </div>
@@ -39,11 +40,11 @@
 		<td>Mail Count</td>
 		<td>Number Count</td>
 		</tr>
-<cfif isDefined('url.start') eq true>		
+	
 	<cfoutput query="search_all" startrow="#url.start#" maxRows="#perPage#">
 
 <cfset totalRecords = search_all.RecordCount>
-<cfset startRow = ((i - 1) * perPage) + 1>
+<cfset startRow = 1>
 <cfset endRow = min(startRow + perPage-1, totalRecords)>
 <cfif endRow gt totalRecords>
 	<cfset endRow = totalRecords>
@@ -73,11 +74,11 @@
 </cfif>
 
 <cfoutput>
-	<a href="search_for.cfm?start=#prev#"><button type="button" name="prev">Prev</button></a>
-	<a href="search_for.cfm?start=#next#"><button type="button" name="next">Next</button></a>
+	<a href="search_for.cfm?start=#prev#"><button type="button" name="prev" class="btn btn-primary">Prev</button></a>
+	<a href="search_for.cfm?start=#next#"><button type="button" name="next" class="btn btn-primary">Next</button></a>
 </cfoutput>	
 </cfif>
-</cfif>
+
 	</table>
 	</div>
 	
